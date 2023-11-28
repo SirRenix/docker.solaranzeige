@@ -94,4 +94,99 @@ If you like my Work, please [![Paypal Donation Page](https://www.paypalobjects.c
 
 <img src="https://raw.githubusercontent.com/DeBaschdi/docker.solaranzeige/master/Templates/Unraid/Screenshot.png" height="325" width="265">
 
+Markup :  - - - -
+
+## QNAP Container Station installation
+
+<img src="https://github.com/SirRenix/docker.solaranzeige/assets/7069603/5362b0bf-bd97-4982-8b82-e9125dec6384" width=600px >
+<img src="https://github.com/SirRenix/docker.solaranzeige/assets/7069603/ae1085ad-9a1c-49be-a770-1cd9a854eb48" width=600px >
+
+<img src="https://github.com/SirRenix/docker.solaranzeige/assets/7069603/d226496c-666d-4b3b-b2f7-7429b9b4932b" width=400px>
+
+You will find containers but the right container is "takealug/solaranzeige" and click "Bereitstellen".
+<img src="https://github.com/SirRenix/docker.solaranzeige/assets/7069603/a2f9e8bc-b5b0-4f3b-b4e5-9148ace15dd8" width=500px>
+<br />
+Accept message with "OK" in new window
+<br />
+<img src="https://github.com/SirRenix/docker.solaranzeige/assets/7069603/f3dc7469-4a60-4658-9ec4-3a89e7f57a2d" width=300px>
+<br />
+Then you must choose a image version "latest"
+<br />
+<img src="https://github.com/SirRenix/docker.solaranzeige/assets/7069603/7c0ba884-226e-44fe-90fa-3f6b2a08a7f4" width=300px>
+<br />
+create container
+<br />
+> **Note:**  All settings are already set automatically.: 
+<img src="https://github.com/SirRenix/docker.solaranzeige/assets/7069603/e5b872bf-bb11-415c-a0d3-e34c1046676a" width=450px>
+<br />
+For the network configuration, there is the option of integrating the container via bridge or nat. I personally prefer my own Bridge with a separate IP that is not the same as the IP address of the QNAP.
+<br />
+
+> **Note:**  Please check whether these ports are already occupied on the QNAP.:
+<img src="https://github.com/SirRenix/docker.solaranzeige/assets/7069603/94816ea7-76c7-43ef-b6a4-05555cb6e58c" width=500px>
+<br />
+
+You can have an automatic IP assigned via DHCP or define your own static IP - "Eine statische IP-Adresse verwenden".
+> **Note:**  You must define a virtual switch as the interface for this setting.:
+<img src="https://github.com/SirRenix/docker.solaranzeige/assets/7069603/b4f812d6-c921-4c83-973c-90d3bea3425e" width=500px>
+<br />
+Then click apply "Übernehmen" and next "Weiter".
+<br />
+At the end there is a summary where you can check everything. Press Finish "Fertigstellen" 
+<br />
+<img src="https://github.com/SirRenix/docker.solaranzeige/assets/7069603/388c2828-48b9-47e7-ae33-57cb1c7cb317" width=500px>
+<br />
+Container is downloaded and installed. This is then displayed in the Container menu where there is an overview of the installed containers.
+
+
+
+
+
+
+
+
+### container station terminal
+
+To continue, go to the gear wheel and click on execute.
+<br />
+<img src="https://github.com/SirRenix/docker.solaranzeige/assets/7069603/45bf9bf4-d56c-4dcc-969f-6025c4c80fa0" width=600px>
+<br />
+Then select bin/bash and click execute. 
+<br />
+<img src="https://github.com/SirRenix/docker.solaranzeige/assets/7069603/d84945af-3b67-4fe6-9aaf-3f08693cbfe0" width=500px>
+<br />
+Then a terminal input is displayed
+<br />
+<img src="https://github.com/SirRenix/docker.solaranzeige/assets/7069603/e86b106f-bcf3-443a-af60-d9f0d8f8f4da" width=400px>
+<br />
+type in: 
+```
+./solaranzeige/setup
+```
+Now simply go through the installation.
+
+#### per ssh putty or other ssh terminal
+Login per putty
+<br />
+<img src="https://github.com/SirRenix/docker.solaranzeige/assets/7069603/e3728343-3be4-473c-a2cf-541d69722d9d" width=400px>
+<br />
+<img src="https://github.com/SirRenix/docker.solaranzeige/assets/7069603/050c3874-be64-4cc8-be5f-419e7b55d6f7" width=400px>
+<br />
+
+Now you can either log in directly to the container and then run the setup or you can run a direct setup.
+container terminal:
+```
+docker exec -i -t solaranzeige-1 bash
+```
+```
+./solaranzeige/setup
+```
+or first run
+```
+docker exec -ti Solaranzeige /solaranzeige/setup
+```
+<img src="https://github.com/SirRenix/docker.solaranzeige/assets/7069603/7ebb595a-f572-412a-ae59-984b074281d4" width=400px>
+
+
+
 
